@@ -1,6 +1,6 @@
 # git practica 2
 Taller GIT. Práctica 2.
-
+Guarda los comandos realizados, así como los resultados(capturas), integrarlo dentro del mismo repositorio
 
 ## Trabajar con un proyecto HTML y un repositorio local.
 - Crea una carpeta practica-taller-git en tu pc.
@@ -48,7 +48,7 @@ git status
 - Pulsa el botón fork (parte superior derecha) para crearte una copia del mismo en tu cuenta.
 - Clona el repositorio en tu equipo *en otra carpeta diferente que la llamaremos 'git-practica-2'*. Quedará algo parecido a lo siguiente:
 ```bash
-git clone https://github.com/[tu-nombre-de-usuario]/git-practica-2.git
+git clone https://github.com/lalobarri/git-practica-2.git
 ```
 - Crea un nuevo fichero en el proyecto que se llame [tu-nombre-de-usuario].html
 - Edita el fichero añadiendo como título tu nombre, algún texto y lo que desees en el.
@@ -69,7 +69,7 @@ git commit -m "Mensaje del commit..."
 git push origin
 ```
 - Desde github crea un pull request de la rama develop a main.
-- Fusiona la rama develop con en main. No deberías de tener ningún conflicto (los veremos más adelante en la [practica 4](https://github.com/josefranciscomunozespinosa/git-practica-4)).
+- Fusiona la rama develop con en main. No deberías de tener ningún conflicto.
 - Haz nuevos cambios en el proyecto siguiendo el flujo de trabajo git flow.
 
 
@@ -82,3 +82,5 @@ Crea un nuevo fichero respuestas.md, contesta las siguientes preguntas y súbelo
 - ¿Qué hay que hacer para que veamos este commit en nuestro repositorio remoto de github?
 - ¿Qué diferencia hay entre hacer un fork o crear una nueva rama?
 - ¿Qué ha pasado con el contenido de la carpeta practica-taller-git? ¿Por qué no la podemos ver en nuestro repositorio remoto de github?
+
+*Utilice un formato que permita distinguir entre sus preguntas y respuestas*
