@@ -1,4 +1,4 @@
-# git practica 2
+# git practica 2 3
 Taller GIT. Práctica 2.
 Guarda los comandos realizados, así como los resultados(capturas), integrarlo dentro del mismo repositorio
 
