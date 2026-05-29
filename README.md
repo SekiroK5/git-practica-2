@@ -145,6 +145,8 @@ Desde la plataforma GitHub se accede al repositorio del profesor en la siguiente
 
 Se pulsa el botón **Fork** en la parte superior derecha para generar una copia del repositorio en la cuenta personal.
 
+<img width="1848" height="979" alt="image" src="https://github.com/user-attachments/assets/553d8909-ac85-49a6-ae58-90237e386203" />
+
 ---
 
 ### 2. Clonar el repositorio
