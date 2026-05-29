@@ -1,92 +1,263 @@
-# git practica 2 3
-Taller GIT. Práctica 2.
-Guarda los comandos realizados, así como los resultados(capturas), integrarlo dentro del mismo repositorio
+# Práctica Taller Git — Práctica 2
 
-## Trabajar con un proyecto HTML y un repositorio local.
-- Crea una carpeta practica-taller-git en tu pc.
-- Inicializa el repositorio. 
- ```bash
- git init
- ```
-- Crea el fichero index.html con un html simple.
-- Comprueba que el repositorio a detectado el cambio. 
+> **Objetivo:** Trabajar con un proyecto HTML y un repositorio local, documentando cada paso con sus comandos y resultados.
+
+---
+
+## Parte 1 — Repositorio local con proyecto HTML
+
+### 1. Crear la carpeta e inicializar el repositorio
+
+Creamos la carpeta `practica-taller-git` y dentro inicializamos el repositorio Git con el siguiente comando:
+
+```bash
+git init
+```
+
+<img width="1295" height="166" alt="git init" src="https://github.com/user-attachments/assets/ad9701a0-cb42-4baa-b6d7-9d8edf60cedb" />
+
+---
+
+### 2. Crear el fichero index.html
+
+Se crea un archivo HTML básico como punto de entrada del proyecto.
+
+<img width="1417" height="329" alt="index.html creado" src="https://github.com/user-attachments/assets/5ae9568c-002e-43dc-9464-ba8c85981ab1" />
+
+---
+
+### 3. Comprobar que Git detectó el cambio
+
 ```bash
 git status
 ```
-- Añade el fichero al stage. 
+
+Git muestra el archivo `index.html` como **untracked**, lo que indica que el archivo existe en el directorio de trabajo pero todavía no está siendo rastreado por el repositorio.
+
+<img width="970" height="328" alt="git status - untracked" src="https://github.com/user-attachments/assets/8adf4e38-1e1f-4f74-874b-12d1dd481968" />
+
+---
+
+### 4. Añadir el fichero al área de staging
+
 ```bash
-git add index.html.
+git add index.html
 ```
-- Confirma los cambios. 
+
+Este comando mueve `index.html` al área de staging, preparando el archivo para ser incluido en el próximo commit.
+
+<img width="1069" height="94" alt="git add index.html" src="https://github.com/user-attachments/assets/a890041c-948d-4a0f-b205-220b743c5fe0" />
+
+---
+
+### 5. Confirmar los cambios
+
 ```bash
-git commit -m “added index file”
+git commit -m "added index file"
 ```
-- Añade un fichero description.html y edita index.html.
-- Comprueba que ha detectado el nuevo fichero y la modificación de index.
+
+Se guarda la primera instantánea del proyecto en el historial local del repositorio.
+
+<img width="926" height="114" alt="primer commit" src="https://github.com/user-attachments/assets/39e38a2e-0f27-4b0d-bf99-a3fb10149e41" />
+
+---
+
+### 6. Añadir description.html y modificar index.html
+
+Se crea el archivo `description.html` y se realizan modificaciones sobre `index.html` para ampliar el contenido del proyecto.
+
+<img width="1476" height="889" alt="description.html y cambios en index" src="https://github.com/user-attachments/assets/984103e7-de68-4d28-8c5a-e94970746bb7" />
+
+---
+
+### 7. Comprobar los cambios detectados
+
+#### git status
+
 ```bash
 git status
+```
+
+- `description.html` aparece como **untracked**: archivo nuevo que Git no rastrea aún.
+- `index.html` aparece como **modified**: archivo ya registrado en el repositorio que ha sido editado.
+
+<img width="929" height="249" alt="git status con dos cambios" src="https://github.com/user-attachments/assets/7325159b-a97d-45fc-9258-20e858e3c506" />
+
+#### git diff
+
+```bash
 git diff
 ```
-- Crea un fichero TODO.txt de tareas pendientes.
-- Comprueba que git ha detectado el nuevo fichero. 
+
+Muestra el detalle línea a línea de las modificaciones realizadas. Las líneas precedidas por `-` en rojo corresponden al contenido eliminado, y las precedidas por `+` en verde al contenido añadido.
+
+<img width="919" height="554" alt="git diff mostrando cambios" src="https://github.com/user-attachments/assets/543f8db3-6b27-4c76-b110-67864eb0e911" />
+
+---
+
+### 8. Crear el fichero TODO.txt
+
+Se crea un archivo `TODO.txt` destinado a registrar tareas personales pendientes.
+
+<img width="371" height="128" alt="TODO.txt creado" src="https://github.com/user-attachments/assets/83ee4a14-6f8c-4005-b814-819ff20019d8" />
+
+Git detecta el nuevo archivo al ejecutar `git status`:
+
 ```bash
 git status
 ```
-- Ignora el fichero TODO.txt ya que es donde anotaremos nuestras tareas personales y no debe formar parte del proyecto. Para ello crea un fichero .gitignore con la linea TODO.txt.
-- Comprueba que ya no detecta el nuevo fichero TODO.txt (si que detectara el .gitignore claro). 
+
+<img width="857" height="262" alt="git status detecta TODO.txt" src="https://github.com/user-attachments/assets/fc65f387-842b-4d1b-9e58-04536d1f78bc" />
+
+---
+
+### 9. Ignorar el fichero TODO.txt con .gitignore
+
+Dado que `TODO.txt` contiene anotaciones personales que no deben formar parte del proyecto, se crea un archivo `.gitignore` incluyendo dicho fichero para que Git lo excluya del seguimiento.
+
+<img width="778" height="169" alt=".gitignore creado" src="https://github.com/user-attachments/assets/5779554f-99dc-4edc-8462-7ee78f7ec87f" />
+
+Al volver a comprobar el estado del repositorio, `TODO.txt` ya no aparece como archivo detectado. En su lugar, Git muestra el nuevo `.gitignore` como archivo pendiente de añadir.
+
 ```bash
 git status
 ```
-- Añade y confirma el .gitignore.
-- Puedes continuar añadiendo ficheros html, css e imágenes para probar el repositorio.
 
+<img width="784" height="233" alt="git status sin TODO.txt" src="https://github.com/user-attachments/assets/496297b0-8197-477c-887d-eda41272921e" />
 
-## Haz un fork del repositorio creado para la práctica del taller:
-- Entra en https://github.com/
-- Accede a tu cuenta.
-- Accede al repositorio del profesor https://github.com/lalobarri/git-practica-2.git
-- Pulsa el botón fork (parte superior derecha) para crearte una copia del mismo en tu cuenta.
-- Clona el repositorio en tu equipo *en otra carpeta diferente que la llamaremos 'git-practica-2'*. Quedará algo parecido a lo siguiente:
+---
+
+### 10. Confirmar el .gitignore
+
+```bash
+git add .gitignore
+git commit -m "add gitignore"
+```
+
+---
+
+## Parte 2 — Fork del repositorio del profesor
+
+### 1. Realizar el fork
+
+Desde la plataforma GitHub se accede al repositorio del profesor en la siguiente dirección:
+`https://github.com/lalobarri/git-practica-2`
+
+Se pulsa el botón **Fork** en la parte superior derecha para generar una copia del repositorio en la cuenta personal.
+
+---
+
+### 2. Clonar el repositorio
+
+En una carpeta distinta a `practica-taller-git`, se clona el repositorio forkeado con el siguiente comando:
+
 ```bash
 git clone https://github.com/[tu-nombre-de-usuario]/git-practica-2.git
 ```
-- Crea un nuevo fichero en el proyecto que se llame [tu-nombre-de-usuario].html
-- Edita el fichero añadiendo como título tu nombre, algún texto y lo que desees en el.
-- Añade el fichero al repositorio.
-- Súbelo al repositorio remoto (github). 
+
+---
+
+### 3. Crear y subir el archivo personal
+
+Se crea un nuevo archivo con el nombre de usuario como identificador, se edita con el contenido deseado y se sube al repositorio remoto.
+
 ```bash
+git add [tu-nombre-de-usuario].html
+git commit -m "add personal page"
 git push
 ```
-- Crea una rama develop y cámbiate a ella.
+
+---
+
+### 4. Crear la rama develop
+
 ```bash
 git checkout -b develop
 ```
-- Realiza cambios en el proyecto, confírmalos y súbelos al repositorio remoto.
+
+Se realizan cambios en el proyecto, se confirman y se suben a la rama remota:
+
 ```bash
 git status
-git add *
-git commit -m "Mensaje del commit..."
-git push origin
+git add .
+git commit -m "changes from develop branch"
+git push origin develop
 ```
-- Desde github crea un pull request de la rama develop a main.
-- Fusiona la rama develop con en main. No deberías de tener ningún conflicto.
-- Haz nuevos cambios en el proyecto siguiendo el flujo de trabajo git flow.
 
+---
 
-## Preguntas
-Crea un nuevo fichero respuestas.md, contesta las siguientes preguntas y súbelo a tu repositorio remoto de github:
+### 5. Pull Request y fusión
 
- 1. ¿Qué sucede cuando hacemos un git add?
- 2. ¿Qué sucede cuando hacemos un git commit? ¿Dónde está ese commit? 
- 3. ¿Por qué al hacer git commit todavía no está disponible ese commit en el repositorio remoto?
- 4. ¿Qué hay que hacer para que veamos este commit en nuestro repositorio remoto de github?
- 5. ¿Qué diferencia hay entre hacer un fork o crear una nueva rama?
- 6. ¿Qué comando se utiliza para crear una nueva rama sin cambiarte a ella?
- 7. ¿Cuál es la diferencia entre los comandos git switch y git checkout al trabajar con ramas?
- 8. ¿Qué es una rama por defecto (como main o master) y por qué es importante?
- 9. ¿Qué comando te permite ver la lista de todas las ramas locales de tu repositorio?
- 10. En el contexto de Git, explica con tus propias palabras qué es una rama (branch) y cuál es su beneficio principal al trabajar en un proyecto de software
- 11. ¿Qué ha pasado con el contenido de la carpeta practica-taller-git? ¿Por qué no la podemos ver en nuestro repositorio remoto de github?
+Desde GitHub se crea un **Pull Request** de la rama `develop` hacia `main`. Al no existir conflictos, se procede a fusionar ambas ramas directamente desde la plataforma.
 
+---
 
-*Utilice un formato que permita distinguir entre sus preguntas y respuestas*
+## Parte 3 — Respuestas
+
+**1. ¿Qué sucede cuando hacemos un git add?**
+
+El archivo pasa del directorio de trabajo al área de staging. Git comienza a rastrear esos cambios y los deja preparados para ser incluidos en el próximo commit.
+
+---
+
+**2. ¿Qué sucede cuando hacemos un git commit? ¿Dónde está ese commit?**
+
+Git crea una instantánea permanente del estado actual de los archivos en staging y la registra en el historial del repositorio local. El commit existe únicamente en la máquina del desarrollador hasta que se sincronice con el remoto.
+
+---
+
+**3. ¿Por qué al hacer git commit todavía no está disponible ese commit en el repositorio remoto?**
+
+Porque `git commit` opera exclusivamente sobre el repositorio local. El repositorio remoto es independiente y no recibe cambios de forma automática.
+
+---
+
+**4. ¿Qué hay que hacer para que veamos este commit en nuestro repositorio remoto de GitHub?**
+
+Ejecutar `git push`, que transfiere los commits del repositorio local al repositorio remoto.
+
+---
+
+**5. ¿Qué diferencia hay entre hacer un fork o crear una nueva rama?**
+
+Un **fork** genera una copia completa e independiente de un repositorio ajeno dentro de la cuenta propia en GitHub, permitiendo trabajar sin afectar al original. Una **rama** es una línea de desarrollo paralela dentro del mismo repositorio, compartiendo su historial con el resto de ramas.
+
+---
+
+**6. ¿Qué comando se utiliza para crear una nueva rama sin cambiarte a ella?**
+
+```bash
+git branch nombre-de-la-rama
+```
+
+---
+
+**7. ¿Cuál es la diferencia entre los comandos git switch y git checkout al trabajar con ramas?**
+
+Ambos permiten cambiar de rama. `git checkout` es el comando clásico y además permite restaurar archivos a estados anteriores. `git switch` fue introducido en Git 2.23 con el propósito exclusivo de cambiar entre ramas, ofreciendo una sintaxis más clara e intuitiva para esa tarea concreta.
+
+---
+
+**8. ¿Qué es una rama por defecto (como main o master) y por qué es importante?**
+
+Es la rama principal creada automáticamente al inicializar el repositorio. Representa el estado estable y oficial del proyecto, y es habitualmente la base desde la que se crean el resto de ramas de desarrollo.
+
+---
+
+**9. ¿Qué comando te permite ver la lista de todas las ramas locales de tu repositorio?**
+
+```bash
+git branch
+```
+
+---
+
+**10. ¿Qué es una rama (branch) y cuál es su beneficio principal al trabajar en un proyecto de software?**
+
+Una rama es una línea de desarrollo independiente dentro del mismo repositorio. Su principal beneficio es permitir trabajar en nuevas funcionalidades o correcciones de forma aislada, sin comprometer el código estable, y poder integrar los cambios de manera controlada una vez que estén listos.
+
+---
+
+**11. ¿Qué ha pasado con el contenido de la carpeta practica-taller-git? ¿Por qué no la podemos ver en nuestro repositorio remoto de GitHub?**
+
+La carpeta `practica-taller-git` existe únicamente de forma local, ya que nunca se vinculó a ningún repositorio remoto. Para que su contenido sea visible en GitHub sería necesario crear un repositorio remoto y ejecutar `git push`. El repositorio clonado `git-practica-2` es completamente independiente de dicha carpeta.
